@@ -10,6 +10,8 @@
     --clr-6: #B4BFC5;
     --clr-white: #ffffff;
     --clr-black: #000000;
+    --box-border-radius: 15px;
+
 }
 
 html, body{
@@ -213,3 +215,84 @@ section > .main-container{
     border-radius: 15px;
 }
 
+.bento-grid{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+    'label0 label0 label1 label1 label1 label1'
+	'label0 label0 label1 label1 label1 label1'
+	'label4 label4 label2 label2 label3 label3'
+	'label4 label4 label5 label5 label3 label3';
+    height: 100%;
+}
+.box-0{
+    grid-area: label0;
+    background-color: var(--clr-1);
+    color: var(--clr-white)
+}
+.box-1{
+    grid-area: label1;
+    background-color: var(--clr-4);
+    color: var(--clr-white)
+
+}
+.box-2{
+    grid-area: label2;
+    background-color: var(--clr-6);
+}
+.box-3{
+    grid-area: label3;
+    background-color: var(--clr-white);
+}
+.box-4{
+    grid-area: label4;
+    background-color: var(--clr-white); 
+
+
+}
+
+.box-5{
+    grid-area: label5;
+    background-color: var(--clr-white);
+
+
+
+}
+
+.box {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--box-border-radius);
+    border: 1px solid #000;
+  }
+
+  .box-title > h1{
+    font-size: 2rem;
+  }
+
+
+  @media (width < 768px) {
+    .bento-grid{
+        grid-template-areas:
+            'label0'
+            'label1'
+            'label2'
+            'label3'
+            'label4'
+            'label5';
+    }
+
+    section > .main-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+  }
